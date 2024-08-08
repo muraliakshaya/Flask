@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Home page</title>
+        </head>
+        <body>
+            <!--
+            <h1> Home Page!</h1>
+            <p>Hello {{content}}!</p>
+            <p>{{r}}</p>
+            {% for x in range(5) %}
+                {%if x%2==1%}
+                    <p>Hi</p>
+                    <p>{{x}}</p>
+                {%endif%}
+            {% endfor %}
+            -->
+
+            {% for x in content %}
+                    <p>{{x}}</p>
+                    {% if x in content== 'tim'%}
+                        <p>Hi Tim!</p>
+                    {%elif x=="george"%}
+                        <p>Hi George!</p>
+                    {% else %}
+                    <p>Hi {{x}}!</p>
+                {%endif%}
+            {% endfor %}
+
+        </body>
+</html>
