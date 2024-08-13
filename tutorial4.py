@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, redirect, url_for, render_template, request, session
 app=Flask(__name__)
 
 @app.route("/")
@@ -9,7 +9,7 @@ def home():
 def login():
     if request.method == "POST":
         # username = request.form.get("username")
-        username = request.form["nm"]
+        user = request.form["nm"]
         return redirect(url_for("user",usr=user))
     else:
         return render_template("login.html")
