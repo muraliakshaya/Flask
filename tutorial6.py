@@ -29,7 +29,7 @@ def user():
     if "user" in session:
         user=session["user"]
         # return f"<h1>{user}</h1>"
-        return render_template("user.html", user=user)
+        return render_template("user.html", user =user)
     else:
         flash("You are not logged in!")
         return redirect(url_for("login"))
@@ -37,9 +37,10 @@ def user():
     
 @app.route("/logout")
 def logout():
-    if "user" in session:
-        user =session["user"]
-        flash("You have been logged out!", "info")
+    # if "user" in session:
+    #     user =session["user"]
+    #     flash("You have been logged out!", "info")
+    flash("You have been logged out!", "info")
     session.pop("user", None)
     return redirect(url_for("login"))
 
