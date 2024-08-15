@@ -34,7 +34,9 @@ def login():
         user = request.form["nm"]
         session["user"] = user
         
-        found_user=users.query.filter_by(name=user).first()
+        # found_user=users.query.filter_by(name=user).first()
+        found_user=users.query.filter_by(name=user).delete()
+        user.delete()
         if found_user :
             session["email"] = found_user.email
         else:
